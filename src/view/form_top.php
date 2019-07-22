@@ -10,4 +10,3 @@ if($playing === 'true'){
 $html .= '<button class="button button2" name="action" value="set">New Playlist</button>';
 $html .= '<button class="button button2" name="action" value="clear">Clear Playlist</button>';
 $html .= '<a class="button4" href="#skip-'.$currentIndex.'">Track #: '.$currentIndex . '</a>';
-$html .= '</form>';

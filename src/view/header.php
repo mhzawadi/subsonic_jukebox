@@ -3,12 +3,12 @@ $header = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
     <title>Subsonic Jukebox</title>
-<!--    <meta http-equiv="refresh" content="5"> -->
+    <meta http-equiv="refresh" content="30">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/theme/lego_mini/favicon.ico">
+<!--    <link rel="shortcut icon" href="/theme/lego_mini/favicon.ico">
     <link rel="apple-touch-icon-precomposed" href="/theme/lego_mini/horwood-touch.png" />
-    <link rel="apple-touch-startup-image" href="/theme/lego_mini/horwood-touch.png" />
+    <link rel="apple-touch-startup-image" href="/theme/lego_mini/horwood-touch.png" /> -->
     <style>
 span, a {
   background-color: #4CAF50; /* Green */
@@ -23,7 +23,7 @@ span, a {
   white-space: nowrap;
 }
 div{
-  background-color: #4CAF50; /* Green */
+  background-color: white; /* Green */
   border: none;
   color: white;
   padding: 5px 5px;
@@ -39,7 +39,7 @@ a.jump {
   margin: 0;
 }
 
-button {
+.button {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
@@ -59,13 +59,13 @@ button {
 }
 
 .button_title {
+  font-size: 16px;
   text-align: left;
   cursor: pointer;
   background-color: white;
   color: black;
-  padding: 2px 2px;
-  border: 2px solid #4CAF50;
-  width: 90%
+  padding: 4px 20px;
+  border: 2px solid #e7e7e7;
 }
 
 span.button_50 {

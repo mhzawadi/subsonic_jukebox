@@ -18,7 +18,7 @@ class JukeboxModel {
 
   // Process the action
   // Will nedd to add HTML builder here also
-  public function action($action){
+  public function action($action, $id){
     switch ($action) {
         case 'add':
             $xml = $this->lists->getRandomSongs(50, 1);
@@ -45,6 +45,15 @@ class JukeboxModel {
             }
             return $html;
             break;
+        case 'skip';
+          $xml = $this->jukebox->jukeboxControl('skip', $id);
+          if($this->check_status($xml) === true){
+            $html = $this->build_html($this->jukebox->jukeboxControl('get'));
+            return $html;
+          }else{
+            return 'Skiping - ERROR';
+          }
+          break;
         case 'get';
           $html = $this->build_html($this->jukebox->jukeboxControl('get'));
           return $html;
@@ -53,8 +62,10 @@ class JukeboxModel {
             $xml = $this->jukebox->jukeboxControl($action);
             if($this->check_status($xml) === true){
               $html = $this->build_html($this->jukebox->jukeboxControl('get'));
+              return $html;
+            }else{
+              return 'ERROR';
             }
-            return $html;
             break;
     }
   }

@@ -18,12 +18,12 @@ class JukeboxController{
   }
 
   public function load_songs(){
-    $this->html = $this->JukeboxModel->action('get');
+    $this->html = $this->JukeboxModel->action('get', '');
   }
 
-  public function process_action($action){
+  public function process_action($action, $id){
     if($action !== ''){
-      $this->html = $this->JukeboxModel->action($action);
+      $this->html = $this->JukeboxModel->action($action, $id);
     }else{
       $this->html = '';
     }

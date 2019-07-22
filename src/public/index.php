@@ -13,11 +13,16 @@ $html = '';
 $jukebox_control = new JukeboxController($Sub);
 
 if(isset($_POST['action'])){
-    $jukebox_control->process_action($_POST['action']);
-    $html = $jukebox_control->getHTML();
+  if(isset($_POST['id'])){
+    $id = $_POST['id'];
+  }else{
+    $id = '';
+  }
+  $jukebox_control->process_action($_POST['action'], $id);
+  $html = $jukebox_control->getHTML();
 }else{
-    $jukebox_control->load_songs();
-    $html = $jukebox_control->getHTML();
+  $jukebox_control->load_songs();
+  $html = $jukebox_control->getHTML();
 }
 
 

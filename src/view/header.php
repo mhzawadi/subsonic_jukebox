@@ -6,9 +6,9 @@ $header = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
     <meta http-equiv="refresh" content="30">
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--    <link rel="shortcut icon" href="/theme/lego_mini/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" href="/theme/lego_mini/horwood-touch.png" />
-    <link rel="apple-touch-startup-image" href="/theme/lego_mini/horwood-touch.png" /> -->
+    <link rel="shortcut icon" href="/images/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/subsonic_logo.png" />
+    <link rel="apple-touch-startup-image" href="/images/subsonic_logo.png" />
     <style>
 span, a {
   background-color: #4CAF50; /* Green */

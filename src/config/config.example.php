@@ -8,6 +8,7 @@
  ******************************/
 define('BASE', "/");
 $settings['inactivityTimeout'] = 3600;
+$settings['URL'] = 'http://127.0.0.1/';
 
 /*	database connection details
  ******************************/

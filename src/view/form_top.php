@@ -1,5 +1,5 @@
 <?php
-$html = '<form name="plugs" method="post" action="http://'.$_SERVER['HTTP_HOST'].'">'."\n";
+$html = '<form name="plugs" method="post" action="'.$settings['URL'].'">'."\n";
 if($playing === 'true'){
   $html .= '<button class="button button3" name="action" value="stop">Stop</button>'."\n";
 }else{

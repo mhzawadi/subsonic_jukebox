@@ -3,7 +3,7 @@
 $song_list = $songs['jukeboxPlaylist']['entry'];
 foreach($song_list as $key => $song){
   $html .= '  <a id="track-'.$key.'" class="jump"></a>'."\n";
-  $html .= '<form name="track-'.$key.'" method="post" action="http://'.$_SERVER['HTTP_HOST'].'">'."\n";
+  $html .= '<form name="track-'.$key.'" method="post" action="'.$settings['URL'].'">'."\n";
   $html .= '<input type="hidden" name="id" value="'.$key.'">'."\n";
   if("$key" === "$currentIndex"){
     $html .= '<div class="button1">'."\n";

@@ -64,7 +64,7 @@ $header = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
       cursor: pointer;
       background-color: white;
       color: black;
-      padding: 4px 20px;
+      padding: 4px 4px;
       border: 2px solid #e7e7e7;
     }
 

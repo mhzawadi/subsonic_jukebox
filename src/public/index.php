@@ -13,6 +13,10 @@ $html = '';
 $jukebox_control = new JukeboxController($Sub);
 
 if(isset($_POST['action'])){
+  if(substr($_POST['action'], 0, 3) === 'skip' ){
+    $id_parts = \explode('-', $_POST['action']);
+    $id = $id_parts[1];
+  }
   if(isset($_POST['id'])){
     $id = $_POST['id'];
   }else{

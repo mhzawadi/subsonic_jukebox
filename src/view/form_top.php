@@ -7,7 +7,7 @@ if($playing === 'true'){
 }
 $html .= '<button class="button button2" name="action" value="set">New Playlist</button>'."\n";
 $html .= '<button class="button button2" name="action" value="clear">Clear Playlist</button><br>'."\n";
-$html .= '<button class="button button2" name="action" value="'.($currentIndex-1) . '">Previous</button>'."\n";
+$html .= '<button class="button button2" name="action" value="skip-'.($currentIndex-1) . '">Previous</button>'."\n";
 $html .= '<a class="button4" href="#track-'.$currentIndex.'">Track #: '.$currentIndex . '</a>'."\n";
-$html .= '<button class="button button2" name="action" value="'.($currentIndex+1) . '">Next</button>'."\n";
+$html .= '<button class="button button2" name="action" value="skip-'.($currentIndex+1) . '">Next</button>'."\n";
 $html .= '</form>'."\n";

@@ -51,7 +51,7 @@ class JukeboxModel {
             $html = $this->build_html($this->jukebox->jukeboxControl('get'));
             return $html;
           }else{
-            return 'Skiping - ERROR';
+            return 'ERROR! We didnt find that skip';
           }
           break;
         case 'get';
@@ -64,7 +64,7 @@ class JukeboxModel {
               $html = $this->build_html($this->jukebox->jukeboxControl('get'));
               return $html;
             }else{
-              return 'ERROR';
+              return 'ERROR! that didnt work';
             }
             break;
     }

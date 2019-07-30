@@ -131,7 +131,7 @@ $header = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
       display: none;
       position: fixed;
       bottom: 20px;
-      right: 10px;
+      left: 72%;
       z-index: 99;
       font-size: 18px;
       border: none;

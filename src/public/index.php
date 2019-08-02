@@ -3,6 +3,7 @@
 namespace MHorwood\Jukebox;
 
 use MHorwood\Jukebox\controller\JukeboxController;
+use MHorwood\Jukebox\controller\RadioController;
 
 require __DIR__ . '/../../vendor/autoload.php';
 require_once(__DIR__ . '/../config/config.php');
@@ -11,6 +12,7 @@ include('../view/footer.php');
 
 $html = '';
 $jukebox_control = new JukeboxController($Sub);
+$radio_player = new RadioController();
 
 if(isset($_POST['action'])){
   if(isset($_POST['id'])){

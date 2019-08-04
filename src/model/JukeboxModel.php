@@ -80,14 +80,14 @@ class JukeboxModel {
   // Build the HTML for the page
   private function build_html($songs){
     // $this->lists->print_pre($songs);
-    if(strpos($this->HTTP_USER_AGENT, 'curl') === true){
+    $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
+    $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
+    if(strpos($this->HTTP_USER_AGENT, 'curl') !== false){
       if($currentIndex !== '-1'){
         include (__DIR__ . '/../view/curl.php');
         return $html;
       }
     }else{
-      $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
-      $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
       include (__DIR__ . '/../view/header.php');
       include (__DIR__ . '/../view/footer.php');
       include (__DIR__ . '/../view/form_top.php');

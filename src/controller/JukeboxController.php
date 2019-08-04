@@ -9,8 +9,8 @@ class JukeboxController{
   private $JukeboxModel;
   protected $html;
 
-  public function __construct($Subsonic) {
-    $this->JukeboxModel = new JukeboxModel($Subsonic);
+  public function __construct($Subsonic, $HTTP_USER_AGENT) {
+    $this->JukeboxModel = new JukeboxModel($Subsonic, $HTTP_USER_AGENT);
   }
 
   public function getHTML() {

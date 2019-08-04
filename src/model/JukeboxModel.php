@@ -10,10 +10,12 @@ class JukeboxModel {
   private $Subsonic;
   private $lists;
   private $jukebox;
+  private $HTTP_USER_AGENT;
 
-  public function __construct($Subsonic) {
+  public function __construct($Subsonic, $HTTP_USER_AGENT) {
     $this->lists = new lists($Subsonic);
     $this->jukebox = new jukebox($Subsonic);
+    $this->HTTP_USER_AGENT = $HTTP_USER_AGENT;
   }
 
   // Process the action
@@ -78,14 +80,23 @@ class JukeboxModel {
   // Build the HTML for the page
   private function build_html($songs){
     // $this->lists->print_pre($songs);
-    $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
-    $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
-    include (__DIR__ . '/../view/form_top.php');
-    if($currentIndex !== '-1'){
-      include (__DIR__ . '/../view/form_mid.php');
+    if(strpos($this->HTTP_USER_AGENT, 'curl') === true){
+      if($currentIndex !== '-1'){
+        include (__DIR__ . '/../view/curl.php');
+        return $html;
+      }
+    }else{
+      $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
+      $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
+      include (__DIR__ . '/../view/header.php');
+      include (__DIR__ . '/../view/footer.php');
+      include (__DIR__ . '/../view/form_top.php');
+      if($currentIndex !== '-1'){
+        include (__DIR__ . '/../view/form_mid.php');
+      }
+      include (__DIR__ . '/../view/form_bottom.php');
+      return $header.$html.$footer;
     }
-    include (__DIR__ . '/../view/form_bottom.php');
-    return $html;
   }
 
   private function check_status($xml){

@@ -6,11 +6,9 @@ use MHorwood\Jukebox\controller\JukeboxController;
 
 require __DIR__ . '/../../vendor/autoload.php';
 require_once(__DIR__ . '/../config/config.php');
-include('../view/header.php');
-include('../view/footer.php');
 
 $html = '';
-$jukebox_control = new JukeboxController($Sub);
+$jukebox_control = new JukeboxController($Sub, $_SERVER['HTTP_USER_AGENT']);
 
 if(isset($_POST['action'])){
   if(isset($_POST['id'])){
@@ -31,4 +29,4 @@ if(isset($_POST['action'])){
 }
 
 
-echo $header.$html.$footer;
+echo $html;

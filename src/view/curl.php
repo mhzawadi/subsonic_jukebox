@@ -1,5 +1,5 @@
 <?php
-if($playing === true){
+if($playing === 'true'){
   $song_list = $songs['jukeboxPlaylist']['entry'];
   foreach($song_list as $key => $song){
     if("$key" === "$currentIndex"){

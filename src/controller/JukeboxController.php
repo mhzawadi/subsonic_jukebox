@@ -3,6 +3,7 @@
 namespace MHorwood\Jukebox\controller;
 
 use MHorwood\Jukebox\model\JukeboxModel;
+use MHorwood\Jukebox\model\CurlModel;
 
 class JukeboxController{
 
@@ -10,7 +11,11 @@ class JukeboxController{
   protected $html;
 
   public function __construct($Subsonic, $HTTP_USER_AGENT) {
-    $this->JukeboxModel = new JukeboxModel($Subsonic, $HTTP_USER_AGENT);
+    if(strpos($HTTP_USER_AGENT, 'curl') !== false){
+      $this->JukeboxModel = new CurlModel($Subsonic);
+    }else{
+      $this->JukeboxModel = new JukeboxModel($Subsonic);
+    }
   }
 
   public function getHTML() {

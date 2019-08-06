@@ -4,9 +4,9 @@ namespace MHorwood\Jukebox\model;
 
 use MHorwood\Jukebox\classes\jukebox;
 use MHorwood\Jukebox\classes\lists;
+use MHorwood\Jukebox\classes\AsciiColorizer;
 
-class JukeboxModel {
-
+class CurlModel {
   private $Subsonic;
   private $lists;
   private $jukebox;
@@ -14,6 +14,7 @@ class JukeboxModel {
   public function __construct($Subsonic) {
     $this->lists = new lists($Subsonic);
     $this->jukebox = new jukebox($Subsonic);
+    $this->color = new AsciiColorizer();
   }
 
   // Process the action
@@ -80,14 +81,12 @@ class JukeboxModel {
     // $this->lists->print_pre($songs);
     $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
     $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
-    include (__DIR__ . '/../view/header.php');
-    include (__DIR__ . '/../view/footer.php');
-    include (__DIR__ . '/../view/form_top.php');
     if($currentIndex !== '-1'){
-      include (__DIR__ . '/../view/form_mid.php');
+      include (__DIR__ . '/../view/curl.php');
+      return $html;
+    }else{
+      return 'No songs in playlist';
     }
-    include (__DIR__ . '/../view/form_bottom.php');
-    return $header.$html.$footer;
   }
 
   private function check_status($xml){
@@ -98,5 +97,3 @@ class JukeboxModel {
     }
   }
 }
-
-?>

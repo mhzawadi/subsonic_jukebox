@@ -17,7 +17,7 @@ if($REQUEST_URI[1] !== ''){
 }
 
 $html = '';
-$jukebox_control = new JukeboxController($Sub, $_SERVER['HTTP_USER_AGENT']);
+$jukebox_control = new JukeboxController($Sub, $settings, $_SERVER['HTTP_USER_AGENT']);
 
 if(isset($args['action'])){
   if(isset($args['id'])){

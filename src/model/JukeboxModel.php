@@ -10,10 +10,12 @@ class JukeboxModel {
   private $Subsonic;
   private $lists;
   private $jukebox;
+  private $settings;
 
-  public function __construct($Subsonic) {
+  public function __construct($Subsonic, $settings) {
     $this->lists = new lists($Subsonic);
     $this->jukebox = new jukebox($Subsonic);
+    $this->settings = $settings;
   }
 
   // Process the action

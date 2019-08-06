@@ -60,7 +60,7 @@ class AsciiColorizer {
      * @throws ColorException
      * @throws \ReflectionException
      */
-    public function colorize(string $text, ?array $colors = null): string {
+    public function colorize(string $text, array $colors = null): string {
         if ($colors === null) {
             return $text;
         }

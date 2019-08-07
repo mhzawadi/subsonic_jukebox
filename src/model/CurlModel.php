@@ -87,12 +87,8 @@ class CurlModel {
     // $this->lists->print_pre($songs);
     $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
     $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
-    if($currentIndex !== '-1'){
-      include (__DIR__ . '/../view/curl.php');
-      return $html;
-    }else{
-      return 'No songs in playlist';
-    }
+    include (__DIR__ . '/../view/curl.php');
+    return $html;
   }
 
   private function check_status($xml){

@@ -1,7 +1,7 @@
 <?php
   $song_list = $songs['jukeboxPlaylist']['entry'];
   if(count($song_list) < 1){
-    $html = 'No songs in playlist';
+    $html = 'No songs in playlist'."\n";
   }else{
     foreach($song_list as $key => $song){
       if("$key" === "$currentIndex" && $playing === 'true'){

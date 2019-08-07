@@ -23,6 +23,10 @@ class CurlModel {
   // Will nedd to add HTML builder here also
   public function action($action, $id){
     switch ($action) {
+        case 'help':
+          include (__DIR__ . '/../view/usage.php');
+          return $html;
+          break;
         case 'add':
             $xml = $this->lists->getRandomSongs(50, 1);
             $songs = $xml['randomSongs']['song'];
@@ -64,7 +68,7 @@ class CurlModel {
         default:
             $xml = $this->jukebox->jukeboxControl($action);
             if($this->check_status($xml) === true){
-              $html = $this->build_html($this->jukebox->jukeboxControl('get'));
+              include (__DIR__ . '/../view/curl_status.php');
               return $html;
             }else{
               return 'ERROR! that didnt work';

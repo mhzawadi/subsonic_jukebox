@@ -11,6 +11,7 @@ class CurlModel {
   private $lists;
   private $jukebox;
   private $settings;
+  private $id;
 
   public function __construct($Subsonic, $settings) {
     $this->lists = new lists($Subsonic);
@@ -22,6 +23,11 @@ class CurlModel {
   // Process the action
   // Will nedd to add HTML builder here also
   public function action($action, $id){
+    if($id === ''){
+      $this->id = 2;
+    }else{
+      $this->id = $id;
+    }
     switch ($action) {
         case 'help':
           include (__DIR__ . '/../view/usage.php');

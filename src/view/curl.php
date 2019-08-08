@@ -23,11 +23,11 @@
     if("$key" === "$currentIndex" && $playing === 'true'){
       $html .= $this->color->colorize('Playing #'.$currentIndex.': ', array($this->color::MAGENTA));
       $html .= $track;
-      $row = 0;
+      $row = 1;
     }elseif("$key" === "$currentIndex" && $playing === 'false'){
       $html .= $this->color->colorize('Start #'.$currentIndex.': ', array($this->color::MAGENTA));
       $html .= $track;
-      $row = 0;
+      $row = 1;
     }elseif($row < $this->id){
       $html .= $this->color->colorize('Track #'.$key.': ', array($this->color::MAGENTA));
       $html .= $track;

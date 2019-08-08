@@ -16,7 +16,7 @@
     }
 }else{
   foreach($song_list as $key => $song){
-    $track .= $song['@attributes']['title'].$this->color->colorize(' From ', array($this->color::MAGENTA,)).
+    $track = $song['@attributes']['title'].$this->color->colorize(' From ', array($this->color::MAGENTA,)).
              $song['@attributes']['album'].$this->color->colorize(' By ', array($this->color::MAGENTA,)).
              $song['@attributes']['artist']."\n";
 

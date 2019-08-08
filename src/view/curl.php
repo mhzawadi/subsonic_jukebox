@@ -15,11 +15,11 @@
                $song['@attributes']['artist']."\n";
     }
 }else{
-  $track .= $song['@attributes']['title'].$this->color->colorize(' From ', array($this->color::MAGENTA,)).
-           $song['@attributes']['album'].$this->color->colorize(' By ', array($this->color::MAGENTA,)).
-           $song['@attributes']['artist']."\n";
-
   foreach($song_list as $key => $song){
+    $track .= $song['@attributes']['title'].$this->color->colorize(' From ', array($this->color::MAGENTA,)).
+             $song['@attributes']['album'].$this->color->colorize(' By ', array($this->color::MAGENTA,)).
+             $song['@attributes']['artist']."\n";
+
     if("$key" === "$currentIndex" && $playing === 'true'){
       $html .= $this->color->colorize('Playing #'.$currentIndex.': ', array($this->color::MAGENTA));
       $html .= $track;

@@ -22,13 +22,9 @@ class JukeboxController{
       return $this->html;
   }
 
-  public function load_songs(){
-    $this->html = $this->JukeboxModel->action('get', '');
-  }
-
-  public function process_action($action, $id){
-    if($action !== ''){
-      $this->html = $this->JukeboxModel->action($action, $id);
+  public function process_action($args){
+    if($args['action'] !== ''){
+      $this->html = $this->JukeboxModel->action($args);
     }else{
       $this->html = '';
     }

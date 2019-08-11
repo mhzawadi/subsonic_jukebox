@@ -12,6 +12,9 @@ class CurlModel {
   private $jukebox;
   private $settings;
   private $id;
+  private $action;
+  private $color;
+  private $set_color;
 
   public function __construct($Subsonic, $settings) {
     $this->lists = new lists($Subsonic);
@@ -22,12 +25,25 @@ class CurlModel {
 
   // Process the action
   // Will nedd to add HTML builder here also
-  public function action($action, $id){
-    if($id === ''){
-      $this->id = 2;
-    }else{
-      $this->id = $id;
+  public function action($args){
+    foreach ($args as $key => $value) {
+      if(\is_numeric($value) && $key !== 'color'){
+        $this->id = $value;
+      }elseif($key !== 'color'){
+        $action = $value;
+      }else{
+        $this->set_color = $value;
+      }
     }
+
+    if(!isset($action) || $action === ''){
+      $action = 'get';
+    }
+
+    if(!isset($this->id)){
+      $this->id = 2;
+    }
+
     switch ($action) {
         case 'help':
           include (__DIR__ . '/../view/usage.php');

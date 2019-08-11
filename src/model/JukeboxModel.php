@@ -20,7 +20,25 @@ class JukeboxModel {
 
   // Process the action
   // Will nedd to add HTML builder here also
-  public function action($action, $id){
+  public function action($args){
+    foreach ($args as $key => $value) {
+      if(\is_numeric($value) && $key !== 'color'){
+        $this->id = $value;
+      }elseif($key !== 'color'){
+        $action = $value;
+      }else{
+        $color = $value;
+      }
+    }
+
+    if(!isset($action) || $action === ''){
+      $action = 'get';
+    }
+
+    if(!isset($this->id)){
+      $this->id = 2;
+    }
+
     switch ($action) {
         case 'add':
             $xml = $this->lists->getRandomSongs(50, 1);

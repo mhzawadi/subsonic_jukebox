@@ -21,22 +21,24 @@ class JukeboxModel {
   // Process the action
   // Will nedd to add HTML builder here also
   public function action($args){
-    foreach ($args as $key => $value) {
-      if(\is_numeric($value) && $key !== 'color'){
-        $this->id = $value;
-      }elseif($key !== 'color'){
-        $action = $value;
+    if(!isset($args['action']) || $args['action'] === ''){
+      $action = 'get';
+    }else{
+      if($args['action'] === 'prev'){
+        $action = 'skip';
+        $args['id'] = $args['prev'];
+      }elseif($args['action'] === 'next'){
+        $action = 'skip';
+        $args['id'] = $args['next'];
       }else{
-        $color = $value;
+        $action = $args['action'];
       }
     }
 
-    if(!isset($action) || $action === ''){
-      $action = 'get';
-    }
-
-    if(!isset($this->id)){
+    if(!isset($args['id'])){
       $this->id = 2;
+    }else{
+      $this->id = $args['id'];
     }
 
     switch ($action) {
@@ -66,7 +68,7 @@ class JukeboxModel {
             return $html;
             break;
         case 'skip';
-          $xml = $this->jukebox->jukeboxControl('skip', $id);
+          $xml = $this->jukebox->jukeboxControl('skip', $this->id);
           if($this->check_status($xml) === true){
             $html = $this->build_html($this->jukebox->jukeboxControl('get'));
             return $html;

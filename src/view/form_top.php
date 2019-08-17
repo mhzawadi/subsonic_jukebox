@@ -3,7 +3,7 @@ $html = '<form name="plugs" method="post" action="'.$this->settings['URL'].'">'.
 if($playing === 'true'){
   $html .= '<button class="button button3" name="action" value="stop">Stop</button>'."\n";
 }else{
-  $html .= '<button class="button button1" name="action" value="start">Start</button>'."\n";
+  $html .= '<button class="button button1" name="action" value="start">Play</button>'."\n";
 }
 $html .= '<button class="button button2" name="action" value="set">New List</button>'."\n";
 $html .= '<button class="button button2" name="action" value="clear">Clear List</button><br>'."\n";

@@ -102,7 +102,7 @@ class JukeboxModel {
     // $this->lists->print_pre($songs);
     $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
     $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
-    $playing = '';
+    $playing_track = '';
     include (__DIR__ . '/../view/header.php');
     include (__DIR__ . '/../view/footer.php');
     include (__DIR__ . '/../view/form_top.php');

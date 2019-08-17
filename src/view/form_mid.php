@@ -8,11 +8,12 @@ foreach($song_list as $key => $song){
   if("$key" === "$currentIndex"){
     $html_list .= '<div class="button1">'."\n";
     $playing = '<div class="button1">'.
-    '  Tite: <button class="button_title" name="action" value="skip">'.
+    '  Now Playing: <br>'.
+    '  &nbsp;&nbsp;&nbsp;Tite: <button class="button_title" name="action" value="skip">'.
         $song['@attributes']['title'] .
-    '  </button>' . '<br>'.
-    '  Album: '.$song['@attributes']['album'] . '<br>' .
-    '  Artist: ' . $song['@attributes']['artist'] .
+    '  &nbsp;&nbsp;&nbsp;</button>' . '<br>'.
+    '  &nbsp;&nbsp;&nbsp;Album: '.$song['@attributes']['album'] . '<br>' .
+    '  &nbsp;&nbsp;&nbsp;Artist: ' . $song['@attributes']['artist'] .
     '</div>'."\n"."\n";
   }else{
     $html_list .= '<div class="button4">'."\n";

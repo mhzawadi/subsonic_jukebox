@@ -1,8 +1,9 @@
 <?php
 
 $song_list = $songs['jukeboxPlaylist']['entry'];
+$html_list = '';
 foreach($song_list as $key => $song){
-  $html_list = '  <a id="track-'.$key.'" class="jump"></a>'."\n";
+  $html_list .= '  <a id="track-'.$key.'" class="jump"></a>'."\n";
   $html_list .= '<form name="track-'.$key.'" method="post" action="'.$this->settings['URL'].'">'."\n";
   $html_list .= '<input type="hidden" name="id" value="'.$key.'">'."\n";
   if("$key" === "$currentIndex"){

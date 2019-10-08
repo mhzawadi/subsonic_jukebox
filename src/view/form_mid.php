@@ -11,19 +11,19 @@ foreach($song_list as $key => $song){
     $playing_track = '<div class="button1">'.
     '  Now Playing: <br>'.
     '  &nbsp;&nbsp;&nbsp;Tite: <button class="button_title" name="action" value="skip">'.
-        $song['@attributes']['title'] .
+        wordwrap($song['@attributes']['title'], 20, "<br />\n") .
     '  &nbsp;&nbsp;&nbsp;</button>' . '<br>'.
-    '  &nbsp;&nbsp;&nbsp;Album: '.$song['@attributes']['album'] . '<br>' .
-    '  &nbsp;&nbsp;&nbsp;Artist: ' . $song['@attributes']['artist'] .
+    '  &nbsp;&nbsp;&nbsp;Album: '. wordwrap($song['@attributes']['album'], 20, "<br />\n") . '<br>' .
+    '  &nbsp;&nbsp;&nbsp;Artist: ' . wordwrap($song['@attributes']['artist'], 20, "<br />\n") .
     '</div>'."\n"."\n";
   }else{
     $html_list .= '<div class="button4">'."\n";
   }
   $html_list .= '  Tite: <button class="button_title" name="action" value="skip">'.
-      $song['@attributes']['title'] .
+      wordwrap($song['@attributes']['title'], 20, "<br />\n") .
   '  </button>' . '<br>'.
-  '  Album: '.$song['@attributes']['album'] . '<br>' .
-  '  Artist: ' . $song['@attributes']['artist'] .
+  '  Album: '. wordwrap($song['@attributes']['album'], 20, "<br />\n") . '<br>' .
+  '  Artist: ' . wordwrap($song['@attributes']['artist'], 20, "<br />\n") .
   '</div>'."\n"."\n";
   $html_list .= '</form>'."\n";
 }

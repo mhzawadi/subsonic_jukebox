@@ -1,5 +1,7 @@
 <?php
 
+$wordwrap = 35;
+
 $song_list = $songs['jukeboxPlaylist']['entry'];
 $html_list = '';
 foreach($song_list as $key => $song){
@@ -11,19 +13,19 @@ foreach($song_list as $key => $song){
     $playing_track = '<div class="button1">'.
     '  Now Playing: <br>'.
     '  &nbsp;&nbsp;&nbsp;Tite: <button class="button_title" name="action" value="skip">'.
-        wordwrap($song['@attributes']['title'], 20, "<br />\n") .
+        wordwrap($song['@attributes']['title'], $wordwrap, "<br />\n") .
     '  &nbsp;&nbsp;&nbsp;</button>' . '<br>'.
-    '  &nbsp;&nbsp;&nbsp;Album: '. wordwrap($song['@attributes']['album'], 20, "<br />\n") . '<br>' .
-    '  &nbsp;&nbsp;&nbsp;Artist: ' . wordwrap($song['@attributes']['artist'], 20, "<br />\n") .
+    '  &nbsp;&nbsp;&nbsp;Album: '. wordwrap($song['@attributes']['album'], $wordwrap, "<br />\n") . '<br>' .
+    '  &nbsp;&nbsp;&nbsp;Artist: ' . wordwrap($song['@attributes']['artist'], $wordwrap, "<br />\n") .
     '</div>'."\n"."\n";
   }else{
     $html_list .= '<div class="button4">'."\n";
   }
   $html_list .= '  Tite: <button class="button_title" name="action" value="skip">'.
-      wordwrap($song['@attributes']['title'], 20, "<br />\n") .
+      wordwrap($song['@attributes']['title'], $wordwrap, "<br />\n") .
   '  </button>' . '<br>'.
-  '  Album: '. wordwrap($song['@attributes']['album'], 20, "<br />\n") . '<br>' .
-  '  Artist: ' . wordwrap($song['@attributes']['artist'], 20, "<br />\n") .
+  '  Album: '. wordwrap($song['@attributes']['album'], $wordwrap, "<br />\n") . '<br>' .
+  '  Artist: ' . wordwrap($song['@attributes']['artist'], $wordwrap, "<br />\n") .
   '</div>'."\n"."\n";
   $html_list .= '</form>'."\n";
 }

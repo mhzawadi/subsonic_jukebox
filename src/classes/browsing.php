@@ -26,72 +26,73 @@ class browsing extends subsonic {
   }
 
   /*
-    Returns all configured top-level music folders. Takes no extra parameters.
-    Returns a <subsonic-response> element with a nested <musicFolders> element on success.
-    */
+  Returns all configured top-level music folders. Takes no extra parameters.
+
+  Returns a <subsonic-response> element with a nested <musicFolders> element on success.
+  */
   public function getMusicFolders (){}
 
   /*
-    Returns an indexed structure of all artists.
+  Returns an indexed structure of all artists.
 
-    | Parameter         | Required | Default | Comment |
-    | `musicFolderId`   | No       |         | If specified, only return artists in the music folder with the given ID. See `getMusicFolders`. |
-    | `ifModifiedSince` | No       |         | If specified, only return a result if the artist collection has changed since the given time (in milliseconds since 1 Jan 1970). |
+  | Parameter         | Required | Default | Comment |
+  | `musicFolderId`   | No       |         | If specified, only return artists in the music folder with the given ID. See `getMusicFolders`. |
+  | `ifModifiedSince` | No       |         | If specified, only return a result if the artist collection has changed since the given time (in milliseconds since 1 Jan 1970). |
 
-    Returns a <subsonic-response> element with a nested <indexes> element on success.
+  Returns a <subsonic-response> element with a nested <indexes> element on success.
   */
   public function getIndexes (){}
 
   /*
-    Returns a listing of all files in a music directory. Typically used to get list of albums for an artist, or list of songs for an album.
+  Returns a listing of all files in a music directory. Typically used to get list of albums for an artist, or list of songs for an album.
 
-    | Parameter | Required | Default | Comment |
-    | id        | Yes      |         | A string which uniquely identifies the music folder. Obtained by calls to getIndexes or getMusicDirectory.|
+  | Parameter | Required | Default | Comment |
+  | id        | Yes      |         | A string which uniquely identifies the music folder. Obtained by calls to getIndexes or getMusicDirectory.|
 
-    Returns a <subsonic-response> element with a nested <directory> element on success.
+  Returns a <subsonic-response> element with a nested <directory> element on success.
   */
   public function getMusicDirectory (){}
 
   /*
-    Returns all genres.
+  Returns all genres.
 
-    Returns a <subsonic-response> element with a nested <genres> element on success.
+  Returns a <subsonic-response> element with a nested <genres> element on success.
   */
   public function getGenres (){}
 
   /*
-    Similar to getIndexes, but organizes music according to ID3 tags.
+  Similar to getIndexes, but organizes music according to ID3 tags.
 
-    Parameter     | Required | Default | Comment
-    musicFolderId | No       |         | If specified, only return artists in the music folder with the given ID. See getMusicFolders.
-    Returns a <subsonic-response> element with a nested <artists> element on success.
+  Parameter     | Required | Default | Comment
+  musicFolderId | No       |         | If specified, only return artists in the music folder with the given ID. See getMusicFolders.
+  Returns a <subsonic-response> element with a nested <artists> element on success.
   */
   public function getArtists (){}
 
   /*
-    Returns details for an artist, including a list of albums. This method organizes music according to ID3 tags.
+  Returns details for an artist, including a list of albums. This method organizes music according to ID3 tags.
 
-    Parameter | Required | Default | Comment
-    id        | Yes      |         | The artist ID.
-    Returns a <subsonic-response> element with a nested <artist> element on success.
+  Parameter | Required | Default | Comment
+  id        | Yes      |         | The artist ID.
+  Returns a <subsonic-response> element with a nested <artist> element on success.
   */
   public function getArtist (){}
 
   /*
-    Returns details for an album, including a list of songs. This method organizes music according to ID3 tags.
+  Returns details for an album, including a list of songs. This method organizes music according to ID3 tags.
 
-    Parameter | Required | Default | Comment
-    id        | Yes      |         | The album ID.
-    Returns a <subsonic-response> element with a nested <album> element on success.
+  Parameter | Required | Default | Comment
+  id        | Yes      |         | The album ID.
+  Returns a <subsonic-response> element with a nested <album> element on success.
   */
   public function getAlbum (){}
 
   /*
-    Returns details for a song.
+  Returns details for a song.
 
-    Parameter | Required | Default | Comment
-    id        | Yes      |         | The song ID.
-    Returns a <subsonic-response> element with a nested <song> element on success.
+  Parameter | Required | Default | Comment
+  id        | Yes      |         | The song ID.
+  Returns a <subsonic-response> element with a nested <song> element on success.
   */
   public function getSong (){}
 

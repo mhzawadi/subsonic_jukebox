@@ -41,7 +41,7 @@ class browsing extends subsonic {
 
   Returns a <subsonic-response> element with a nested <indexes> element on success.
   */
-  public function getIndexes (){}
+  public function getIndexes ( $musicFolderId = '', $ifModifiedSince = '' ){}
 
   /*
   Returns a listing of all files in a music directory. Typically used to get list of albums for an artist, or list of songs for an album.
@@ -51,7 +51,7 @@ class browsing extends subsonic {
 
   Returns a <subsonic-response> element with a nested <directory> element on success.
   */
-  public function getMusicDirectory (){}
+  public function getMusicDirectory ( $id ){}
 
   /*
   Returns all genres.
@@ -67,7 +67,7 @@ class browsing extends subsonic {
   musicFolderId | No       |         | If specified, only return artists in the music folder with the given ID. See getMusicFolders.
   Returns a <subsonic-response> element with a nested <artists> element on success.
   */
-  public function getArtists (){}
+  public function getArtists ( $musicFolderId = '' ){}
 
   /*
   Returns details for an artist, including a list of albums. This method organizes music according to ID3 tags.
@@ -76,7 +76,7 @@ class browsing extends subsonic {
   id        | Yes      |         | The artist ID.
   Returns a <subsonic-response> element with a nested <artist> element on success.
   */
-  public function getArtist (){}
+  public function getArtist ( $id ){}
 
   /*
   Returns details for an album, including a list of songs. This method organizes music according to ID3 tags.
@@ -85,7 +85,7 @@ class browsing extends subsonic {
   id        | Yes      |         | The album ID.
   Returns a <subsonic-response> element with a nested <album> element on success.
   */
-  public function getAlbum (){}
+  public function getAlbum ( $id ){}
 
   /*
   Returns details for a song.
@@ -94,7 +94,7 @@ class browsing extends subsonic {
   id        | Yes      |         | The song ID.
   Returns a <subsonic-response> element with a nested <song> element on success.
   */
-  public function getSong (){}
+  public function getSong ( $id ){}
 
   /*
   Returns all video files.
@@ -110,7 +110,7 @@ class browsing extends subsonic {
   id        | Yes      |         | The video ID.
   Returns a <subsonic-response> element with a nested <videoInfo> element on success.
   */
-  public function getVideoInfo (){}
+  public function getVideoInfo ( $id ){}
 
   /*
   Returns artist info with biography, image URLs and similar artists, using data from last.fm.
@@ -121,7 +121,7 @@ class browsing extends subsonic {
   includeNotPresent | No       | false   | Whether to return artists that are not present in the media library.
   Returns a <subsonic-response> element with a nested <artistInfo> element on success.
   */
-  public function getArtistInfo (){}
+  public function getArtistInfo ( $id, $count = '', $includeNotPresent = false ){}
 
   /*
   Similar to getArtistInfo, but organizes music according to ID3 tags.
@@ -132,7 +132,7 @@ class browsing extends subsonic {
   includeNotPresent | No       | false   | Whether to return artists that are not present in the media library.
   Returns a <subsonic-response> element with a nested <artistInfo2> element on success.
   */
-  public function getArtistInfo2 (){}
+  public function getArtistInfo2 ( $id, $count = '', $includeNotPresent = false ){}
 
   /*
     Returns album notes, image URLs etc, using data from last.fm.
@@ -141,7 +141,7 @@ class browsing extends subsonic {
   id        | Yes      |         | The album or song ID.
   Returns a <subsonic-response> element with a nested <albumInfo> element on success
   */
-  public function getAlbumInfo (){}
+  public function getAlbumInfo ( $id ){}
 
   /*
   Similar to getAlbumInfo, but organizes music according to ID3 tags.
@@ -150,7 +150,7 @@ class browsing extends subsonic {
   id        | Yes      |         | The album ID.
   Returns a <subsonic-response> element with a nested <albumInfo> element on success.
   */
-  public function getAlbumInfo2 (){}
+  public function getAlbumInfo2 ( $id ){}
 
   /*
   Returns a random collection of songs from the given artist and similar artists, using data from last.fm. Typically used for artist radio features.
@@ -160,7 +160,7 @@ class browsing extends subsonic {
   count     | No       | 50      | Max number of songs to return.
   Returns a <subsonic-response> element with a nested <similarSongs> element on success.
   */
-  public function getSimilarSongs (){}
+  public function getSimilarSongs ( $id, $count = 50 ){}
 
   /*
   Similar to getSimilarSongs, but organizes music according to ID3 tags.
@@ -170,7 +170,7 @@ class browsing extends subsonic {
   count     | No       | 50      | Max number of songs to return.
   Returns a <subsonic-response> element with a nested <similarSongs2> element on success.
   */
-  public function getSimilarSongs2 (){}
+  public function getSimilarSongs2 ( $id, $count = 50 ){}
 
   /*
   Returns top songs for the given artist, using data from last.fm.
@@ -180,6 +180,6 @@ class browsing extends subsonic {
   count     | No       | 50      | Max number of songs to return.
   Returns a <subsonic-response> element with a nested <topSongs> element on success.
   */
-  public function getTopSongs (){}
+  public function getTopSongs ( $artist, $count = 50 ){}
 
  }

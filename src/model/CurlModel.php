@@ -16,9 +16,9 @@ class CurlModel {
   private $color;
   private $set_color;
 
-  public function __construct($Subsonic, $settings) {
-    $this->lists = new lists($Subsonic);
-    $this->jukebox = new jukebox($Subsonic);
+  public function __construct($settings) {
+    $this->lists = new lists($settings['Sub']);
+    $this->jukebox = new jukebox($settings['Sub']);
     $this->color = new AsciiColorizer();
     $this->settings = $settings;
   }

@@ -12,12 +12,12 @@ class JukeboxController{
   private $ArtistModel;
   protected $html;
 
-  public function __construct($Subsonic, $settings, $HTTP_USER_AGENT) {
+  public function __construct($settings, $HTTP_USER_AGENT) {
     if(strpos($HTTP_USER_AGENT, 'curl') !== false){
-      $this->JukeboxModel = new CurlModel($Subsonic, $settings);
+      $this->JukeboxModel = new CurlModel($settings);
     }else{
-      $this->JukeboxModel = new JukeboxModel($Subsonic, $settings);
-      $this->ArtistModel = new ArtistModel($Subsonic, $settings);
+      $this->JukeboxModel = new JukeboxModel($settings);
+      $this->ArtistModel = new ArtistModel($settings);
     }
   }
 
@@ -27,12 +27,19 @@ class JukeboxController{
 
   public function process_action($args){
     $this->html = '';
-    if($args[0] === 'albums'){
-      echo 'this will be an albums list';
-    }if($args[0] === 'artists'){
-      $this->html = $this->ArtistModel->action($args);
-    }else{
-      $this->html = $this->JukeboxModel->action($args);
+    switch ($args[0]) {
+      case 'playing_now':
+        $this->html = $this->JukeboxModel->playing_now($args);
+        break;
+      case 'albums':
+        $this->html = $this->JukeboxModel->albums($args);
+        break;
+      case 'artists':
+        $this->html = $this->JukeboxModel->artists($args);
+        break;
+      default:
+        $this->html = $this->JukeboxModel->jukebox($args);
+        break;
     }
   }
 

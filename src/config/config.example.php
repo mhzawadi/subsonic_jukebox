@@ -12,18 +12,18 @@ $settings['URL'] = 'http://127.0.0.1/';
 
 /*	database connection details
  ******************************/
-$db['host'] = '127.0.0.1';
-$db['port'] = '3306';
-$db['user'] = 'root';
-$db['pass'] = 'hello';
-$db['name'] = 'site';
-$db['desc'] = '';
+$settings['db']['host'] = '127.0.0.1';
+$settings['db']['port'] = '3306';
+$settings['db']['user'] = 'root';
+$settings['db']['pass'] = 'hello';
+$settings['db']['name'] = 'site';
+$settings['db']['desc'] = '';
 
 /* Subsonic Setting
  *******************/
-$Sub['ADDR'] = '';
-$Sub['USER'] = '';
-$Sub['PASS'] = '';
-$Sub['SALT'] = '';
-$Sub['VER'] = '1.16.1';
-$Sub['CLI'] = 'php';
+$settings['Sub']['ADDR'] = '';
+$settings['Sub']['USER'] = '';
+$settings['Sub']['PASS'] = '';
+$settings['Sub']['SALT'] = '';
+$settings['Sub']['VER'] = '1.16.1';
+$settings['Sub']['CLI'] = 'php';

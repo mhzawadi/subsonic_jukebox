@@ -53,7 +53,17 @@ class lists extends subsonic {
 
   }
   public function getSongsByGenre(){}
-  public function getNowPlaying(){}
+
+  /*
+  Returns what is currently being played by all users. Takes no extra parameters.
+
+  Returns a <subsonic-response> element with a nested <nowPlaying> element on success.
+  */
+  public function getNowPlaying(){
+    return $this->connect($this->SubADDR.'/rest/getNowPlaying'.'?u='.$this->SubUSER.
+    '&t='.$this->SubPASS.'&s='.$this->SubSALT.'&v='.$this->SubVER.'&c='.
+    $this->SubCLI);
+  }
   public function getStarred(){}
   public function getStarred2(){}
 

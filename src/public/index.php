@@ -11,15 +11,15 @@ $REQUEST = \explode('?', $_SERVER['REQUEST_URI']);
 $REQUEST_URI = \explode('/', $REQUEST[0]);
 if($REQUEST_URI[0] === ''){
   array_shift($REQUEST_URI);
-  // $uri['action'] = $REQUEST_URI[1];
-  // $uri['id'] = $REQUEST_URI[2];
   $args = \array_merge($REQUEST_URI, $_GET, $_POST);
 }else{
   $args = \array_merge($_GET, $_POST);
 }
 
+print_r($args);
+
 $html = '';
-$jukebox_control = new JukeboxController($Sub, $settings, $_SERVER['HTTP_USER_AGENT']);
+$jukebox_control = new JukeboxController($settings, $_SERVER['HTTP_USER_AGENT']);
 
 $jukebox_control->process_action($args);
 $html = $jukebox_control->getHTML();

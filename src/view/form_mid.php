@@ -21,6 +21,7 @@ foreach($song_list as $key => $song){
   }else{
     $html_list .= '<div class="button4">'."\n";
   }
+  $html_list .= '<hr />'."\n";
   $html_list .= '  Tite: <button class="button_title" name="action" value="skip">'.
       wordwrap($song['@attributes']['title'], $wordwrap, "<br />\n") .
   '  </button>' . '<br>'.

@@ -19,9 +19,10 @@ foreach($song_list as $key => $song){
     '  &nbsp;&nbsp;&nbsp;Artist: ' . wordwrap($song['@attributes']['artist'], $wordwrap, "<br />\n") .
     '</div>'."\n"."\n";
   }else{
+    $html_list .= '<hr />'."\n";
     $html_list .= '<div class="button4">'."\n";
   }
-  $html_list .= '<hr />'."\n";
+
   $html_list .= '  Tite: <button class="button_title" name="action" value="skip">'.
       wordwrap($song['@attributes']['title'], $wordwrap, "<br />\n") .
   '  </button>' . '<br>'.

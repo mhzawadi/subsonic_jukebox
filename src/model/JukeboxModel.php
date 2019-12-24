@@ -12,15 +12,15 @@ class JukeboxModel {
   private $jukebox;
   private $settings;
 
-  public function __construct($Subsonic, $settings) {
-    $this->lists = new lists($Subsonic);
-    $this->jukebox = new jukebox($Subsonic);
+  public function __construct($settings) {
+    $this->lists = new lists($settings['Sub']);
+    $this->jukebox = new jukebox($settings['Sub']);
     $this->settings = $settings;
   }
 
   // Process the action
   // Will nedd to add HTML builder here also
-  public function action($args){
+  public function jukebox($args){
     if(!isset($args['action']) || $args['action'] === ''){
       $action = 'get';
     }else{
@@ -99,7 +99,6 @@ class JukeboxModel {
 
   // Build the HTML for the page
   private function build_html($songs){
-    // $this->lists->print_pre($songs);
     $playing = $songs['jukeboxPlaylist']['@attributes']['playing'];
     $currentIndex = $songs['jukeboxPlaylist']['@attributes']['currentIndex'];
     $playing_track = '';
@@ -120,6 +119,17 @@ class JukeboxModel {
       return false;
     }
   }
+
+  public function playing_now(){
+    include (__DIR__ . '/../view/header.php');
+    include (__DIR__ . '/../view/footer.php');
+    include (__DIR__ . '/../view/form_top.php');
+    $xml = $this->lists->getNowPlaying();
+    include (__DIR__ . '/../view/form_bottom.php');
+    return $header.$html.$xml['nowPlaying']['entry']['@attributes']['title'].$footer;
+  }
+  public function artists() {}
+  public function albums() {}
 }
 
 ?>

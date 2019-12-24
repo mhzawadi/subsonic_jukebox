@@ -18,8 +18,8 @@ foreach($song_list as $key => $song){
     '  &nbsp;&nbsp;&nbsp;Album: '. wordwrap($song['@attributes']['album'], $wordwrap, "<br />\n") . '<br>' .
     '  &nbsp;&nbsp;&nbsp;Artist: ' . wordwrap($song['@attributes']['artist'], $wordwrap, "<br />\n") .
     '</div>'."\n"."\n";
-  }else{
     $html_list .= '<hr />'."\n";
+  }else{
     $html_list .= '<div class="button4">'."\n";
   }
 

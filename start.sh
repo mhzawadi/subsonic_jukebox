@@ -13,4 +13,7 @@ printf "\n<Directory \"/jukebox/public\">\n\tAllowOverride All\n</Directory>\n" 
 ln -sf /dev/stdout /var/log/apache2/access.log
 ln -sf /dev/stderr /var/log/apache2/error.log
 
+chown -R apache:apache /jukebox
+cd /jukebox && composer install
+
 httpd -D FOREGROUND

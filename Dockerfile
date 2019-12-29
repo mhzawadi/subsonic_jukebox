@@ -7,9 +7,9 @@ RUN apk update                                                             \
     &&  apk add php7-apache2 php7-curl                                     \
     && rm -f /var/cache/apk/*
 
-#USER jukebox
-#WORKDIR /jukebox
-#RUN composer install
+USER apache
+WORKDIR /jukebox
+RUN composer install
 
 EXPOSE 80
 

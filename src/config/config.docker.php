@@ -1,5 +1,20 @@
 <?php
 
+/* Ensure we got the environment */
+$vars = array(
+    'SUB_URL',
+    'SUB_ADDR',
+    'SUB_USER',
+    'SUB_PASS',
+    'SUB_SALT'
+);
+foreach ($vars as $var) {
+    $env = getenv($var);
+    if (!isset($_ENV[$var]) && $env !== false) {
+        $_ENV[$var] = $env;
+    }
+}
+
 /**
  *	BASE definition if Site
  * 	is not in root directory (e.g. /site/)

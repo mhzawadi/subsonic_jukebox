@@ -6,8 +6,7 @@ COPY . /jukebox/
 RUN apk update                                  \
     &&  apk add php7-apache2 php7-curl php7-dom php7-xml php7-xmlwriter \
     php7-tokenizer composer \
-    && rm -f /var/cache/apk/* \
-    &&
+    && rm -f /var/cache/apk/*
 
 EXPOSE 80
 

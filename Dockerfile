@@ -6,7 +6,6 @@ COPY . /jukebox/
 RUN apk update                                                             \
     &&  apk add php7-apache2 php7-curl                                     \
     && rm -f /var/cache/apk/* \
-    && mkdir /run/apache2 \
     && useradd -ms /bin/bash jukebox
 
 #USER jukebox

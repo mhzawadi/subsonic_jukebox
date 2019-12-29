@@ -1,4 +1,4 @@
-# Subsonic Jukebox
+# Subsonic Jukebox [![Build Status](https://drone.horwood.biz/api/badges/matt/subsonic_jukebox/status.svg)](https://drone.horwood.biz/matt/subsonic_jukebox)
 
 A Subsonic Jukebox manager, it has base functions to add tracks and start or stop. I plan to build out the other functions as I find time, or I get PRs.
 

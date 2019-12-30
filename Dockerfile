@@ -8,7 +8,7 @@ RUN apk update                                  \
     php7-tokenizer php7-simplexml composer \
     && rm -f /var/cache/apk/* \
     && chmod +x /jukebox/start.sh \
-    && su -c 'cd /jukebox && composer install' apache
+    && su -s '/bin/bash' -c 'cd /jukebox && composer install' apache
 
 EXPOSE 80
 

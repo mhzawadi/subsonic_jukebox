@@ -1,7 +1,7 @@
 version: '3.5'
 
 services:
-    jukebox:
+  jukebox:
     image: mhzawadi/subsonic_jukebox
     restart: always
     environment:
@@ -10,3 +10,5 @@ services:
       - SUB_USER=test
       - SUB_PASS=26719a1196d2a940705a59634eb18eab
       - SUB_SALT=c19b2d
+    ports:
+      - 85:80

@@ -15,6 +15,5 @@ ln -sf /dev/stderr /var/log/apache2/error.log
 
 chown -R apache:apache /jukebox
 cp /jukebox/src/config/config.docker.php /jukebox/src/config/config.php
-cd /jukebox && composer install
 
 httpd -D FOREGROUND

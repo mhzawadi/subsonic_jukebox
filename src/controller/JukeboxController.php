@@ -10,11 +10,11 @@ class JukeboxController{
   private $JukeboxModel;
   protected $html;
 
-  public function __construct($Subsonic, $settings, $HTTP_USER_AGENT) {
+  public function __construct($settings, $HTTP_USER_AGENT) {
     if(strpos($HTTP_USER_AGENT, 'curl') !== false){
-      $this->JukeboxModel = new CurlModel($Subsonic, $settings);
+      $this->JukeboxModel = new CurlModel($settings);
     }else{
-      $this->JukeboxModel = new JukeboxModel($Subsonic, $settings);
+      $this->JukeboxModel = new JukeboxModel($settings);
     }
   }
 

@@ -12,9 +12,9 @@ class JukeboxModel {
   private $jukebox;
   private $settings;
 
-  public function __construct($Subsonic, $settings) {
-    $this->lists = new lists($Subsonic);
-    $this->jukebox = new jukebox($Subsonic);
+  public function __construct($settings) {
+    $this->lists = new lists($settings);
+    $this->jukebox = new jukebox($settings);
     $this->settings = $settings;
   }
 

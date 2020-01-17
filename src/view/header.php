@@ -9,7 +9,7 @@ $header = '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
     <link rel="shortcut icon" href="/images/favicon.png">
     <link rel="apple-touch-icon-precomposed" href="/images/subsonic_logo.png" />
     <link rel="apple-touch-startup-image" href="/images/subsonic_logo.png" />
-    <link href="main.css" type="text/css" rel="stylesheet" media="all" />
+    <link href="/css/main.css" type="text/css" rel="stylesheet" media="all" />
 </head>
 
 <body>

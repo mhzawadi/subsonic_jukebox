@@ -16,13 +16,13 @@ class jukebox extends subsonic {
   /**
    * Build Object
    **/
-   function __construct($Subsonic){
-     $this->SubADDR = $Subsonic['ADDR'];
-     $this->SubUSER = $Subsonic['USER'];
-     $this->SubPASS = $Subsonic['PASS'];
-     $this->SubSALT = $Subsonic['SALT'];
-     $this->SubVER = $Subsonic['VER'];
-     $this->SubCLI = $Subsonic['CLI'];
+   function __construct($settings){
+     $this->SubADDR = $settings['Sub']['ADDR'];
+     $this->SubUSER = $settings['Sub']['USER'];
+     $this->SubPASS = $settings['Sub']['PASS'];
+     $this->SubSALT = $settings['Sub']['SALT'];
+     $this->SubVER = $settings['Sub']['VER'];
+     $this->SubCLI = $settings['Sub']['CLI'];
    }
 
   /*

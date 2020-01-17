@@ -19,7 +19,7 @@ if($REQUEST_URI[0] === ''){
 }
 
 $html = '';
-$jukebox_control = new JukeboxController($Sub, $settings, $_SERVER['HTTP_USER_AGENT']);
+$jukebox_control = new JukeboxController($settings, $_SERVER['HTTP_USER_AGENT']);
 
 $jukebox_control->process_action($args);
 $html = $jukebox_control->getHTML();

@@ -1,4 +1,3 @@
 .git
 vendor
 src/config/config.php
-composer.lock

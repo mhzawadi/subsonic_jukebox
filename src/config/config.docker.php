@@ -28,18 +28,18 @@ $settings['URL'] = $_ENV['SUB_URL'];
 
 /*	database connection details
  ******************************/
-$db['host'] = '127.0.0.1';
-$db['port'] = '3306';
-$db['user'] = 'root';
-$db['pass'] = 'hello';
-$db['name'] = 'site';
-$db['desc'] = '';
+ $settings['db']['host'] = '127.0.0.1';
+ $settings['db']['port'] = '3306';
+ $settings['db']['user'] = 'root';
+ $settings['db']['pass'] = 'hello';
+ $settings['db']['name'] = 'site';
+ $settings['db']['desc'] = '';
 
 /* Subsonic Setting
  *******************/
-$Sub['ADDR'] = $_ENV['SUB_ADDR'];
-$Sub['USER'] = $_ENV['SUB_USER'];
-$Sub['PASS'] = $_ENV['SUB_PASS'];
-$Sub['SALT'] = $_ENV['SUB_SALT'];
-$Sub['VER'] = '1.16.1';
-$Sub['CLI'] = 'php';
+$settings['Sub']['ADDR'] = $_ENV['SUB_ADDR'];
+$settings['Sub']['USER'] = $_ENV['SUB_USER'];
+$settings['Sub']['PASS'] = $_ENV['SUB_PASS'];
+$settings['Sub']['SALT'] = $_ENV['SUB_SALT'];
+$settings['Sub']['VER'] = '1.16.1';
+$settings['Sub']['CLI'] = 'curl';

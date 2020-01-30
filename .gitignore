@@ -66,4 +66,3 @@ fabric.properties
 # Application stuff
 vendor
 src/config/config.php
-composer.lock

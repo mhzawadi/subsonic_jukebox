@@ -1,5 +1,6 @@
 <?php
-$html = '<a href="/playlist">Playlist</a> <a href="/albums">Albums</a> <a href="/artists">Artists</a>'."\n";
+#$html = '<a href="/playlist">Playlist</a> <a href="/albums">Albums</a> <a href="/artists">Artists</a>'."\n";
+$html = '';
 $html .= '<form name="plugs" method="post" action="'.$this->settings['URL'].'">'."\n";
 if($playing === 'true'){
   $html .= '<button class="button button_30 button3" name="action" value="stop">Stop</button>'."\n";

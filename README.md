@@ -43,9 +43,18 @@ docker-compose up -d
   - For example: if the password is sesame and the random salt is c19b2d, then token = md5("sesamec19b2d") = 26719a1196d2a940705a59634eb18eab
 - SUB_SALT: the salt you used to make your hash
 
-## Versioning
+## Docker hub tags
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+You can use following tags on Docker hub:
+
+* `latest` - latest stable release
+* `v0.0.7` - latest stable release for the 0.0.7
+
+### how to build
+
+Latest is build from the docker hub once I push to the github repo, the arm versions are built from my mac with the below buildx tool
+
+`docker buildx build --platform linux/amd64,linux/arm64 -t mhzawadi/subsonic_jukebox:v0.0.7 --push .`
 
 ## Authors
 

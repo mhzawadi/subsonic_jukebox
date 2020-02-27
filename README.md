@@ -1,4 +1,4 @@
-# Subsonic Jukebox [![Build Status](https://drone.horwood.biz/api/badges/matt/subsonic_jukebox/status.svg)](https://drone.horwood.biz/matt/subsonic_jukebox)
+# Subsonic Jukebox
 
 A Subsonic Jukebox manager, it has base functions to add tracks and start or stop. I plan to build out the other functions as I find time, or I get PRs.
 
@@ -55,6 +55,14 @@ You can use following tags on Docker hub:
 Latest is build from the docker hub once I push to the github repo, the arm versions are built from my mac with the below buildx tool
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t mhzawadi/subsonic_jukebox:v0.0.7 --push .`
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mhzawadi/subsonic_jukebox/tags).
+
+## Conventional Commits
+
+We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) for our commits, this allows us to automatically generating CHANGELOGs.
 
 ## Authors
 

@@ -1,0 +1,2 @@
+conventional-commit==0.3.2
+auto-changelog==0.4.0

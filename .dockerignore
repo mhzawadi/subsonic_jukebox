@@ -1,3 +1,4 @@
 .git
 vendor
 src/config/config.php
+.env

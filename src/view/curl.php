@@ -1,26 +1,27 @@
 <?php
 
-  if($this->set_color === '0'){
-    $color = Null;
-  }else{
-    $color = array($this->color::BOLD,$this->color::MAGENTA);
-  }
+if($this->set_color === '0'){
+  $color = Null;
+}else{
+  $color = array($this->color::BOLD,$this->color::MAGENTA);
+}
 
-  $song_list = $songs['jukeboxPlaylist']['entry'];
-  $end = count($song_list);
-  if($end < 1){
-    $html = 'No songs in playlist'."\n";
-  }elseif($this->id === 'all'){
-    foreach($song_list as $key => $song){
-      if("$key" === "$currentIndex" && $playing === 'true'){
-        $html .= $this->color->colorize('Playing #'.$currentIndex.': ', $color);
-      }else{
-        $html .= $this->color->colorize('Track #'.$key.': ', $color);
-      }
-      $html .= $song['@attributes']['title'].$this->color->colorize(' From ', $color).
-               $song['@attributes']['album'].$this->color->colorize(' By ', $color).
-               $song['@attributes']['artist']."\n";
+$song_list = $songs['jukeboxPlaylist']['entry'];
+$end = count($song_list);
+if($end < 1){
+  $html = 'No songs in playlist'."\n";
+}elseif($this->id === 'all'){
+  foreach($song_list as $key => $song){
+    if("$key" === "$currentIndex" && $playing === 'true'){
+      $html .= $this->color->colorize('Playing #'.$currentIndex.': ', $color);
+    }else{
+      $html .= $this->color->colorize('Track #'.$key.': ', $color);
     }
+    $html .= $song['@attributes']['title'].$this->color->colorize(' From ', $color).
+             $song['@attributes']['album'].$this->color->colorize(' By ', $color).
+             $song['@attributes']['artist']."\n";
+  }
+  $html .= 'Next: https://'.$settings['URL'].'/?action=skip&id='.$key."\n";
 }else{
   $row = $end;
   foreach($song_list as $key => $song){

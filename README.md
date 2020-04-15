@@ -26,7 +26,7 @@ $ composer install
 $ cp src/config/comfig.example.php src/config/config.php
 ```
 
-### Docker setup
+## Docker setup
 
 You can pull my docker image and have it setup in no time
 ```
@@ -34,7 +34,7 @@ wget https://github.com/mhzawadi/subsonic_jukebox/blob/master/docker-compose.yml
 docker-compose up -d
 ```
 
-## Environment variables summary
+### Environment variables summary
 
 - SUB_URL: the URL for the jukebox site (including any ports) e.g. jukebox.example.com
 - SUB_ADDR: the address of subsonic e.g. 192.168.1.1
@@ -43,7 +43,7 @@ docker-compose up -d
   - For example: if the password is sesame and the random salt is c19b2d, then token = md5("sesamec19b2d") = 26719a1196d2a940705a59634eb18eab
 - SUB_SALT: the salt you used to make your hash
 
-## Docker hub tags
+### Docker hub tags
 
 You can use following tags on Docker hub:
 
@@ -56,13 +56,9 @@ Latest is build from the docker hub once I push to the github repo, the arm vers
 
 `docker buildx build --platform linux/amd64,linux/arm64 -t mhzawadi/subsonic_jukebox:v0.0.7 --push .`
 
-## Versioning
+## Contributing
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/mhzawadi/subsonic_jukebox/tags).
-
-## Conventional Commits
-
-We use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/#summary) for our commits, this allows us to automatically generating CHANGELOGs.
+Please read [CONTRIBUTING.md](https://github.com/mhzawadi/subsonic_jukebox/blob/master/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 

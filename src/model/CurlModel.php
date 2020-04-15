@@ -75,7 +75,7 @@ class CurlModel {
             return $html;
             break;
         case 'skip';
-          $xml = $this->jukebox->jukeboxControl('skip', $id);
+          $xml = $this->jukebox->jukeboxControl('skip', $this->id);
           if($this->check_status($xml) === true){
             $html = $this->build_html($this->jukebox->jukeboxControl('get'));
             return $html;

@@ -8,6 +8,7 @@ else
   TAG=$1
 fi
 
+git checkout master
 git pull;
 git checkout "${TAG}"
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 \

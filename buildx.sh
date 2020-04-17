@@ -13,3 +13,5 @@ git pull;
 git checkout "${TAG}"
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 \
        -t mhzawadi/subsonic_jukebox:${TAG} --push .
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 \
+      -t mhzawadi/subsonic_jukebox:latest --push .

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $# -lh 1]
+if [ $# -lh 1 ]
 then
   echo "this needs a tag please"
   exit 1

@@ -27,12 +27,17 @@ class CurlModel {
   // Will nedd to add HTML builder here also
   public function action($args){
     foreach ($args as $key => $value) {
-      if(\is_numeric($value) && $key !== 'color'){
-        $this->id = $value;
-      }elseif($key !== 'color'){
-        $action = $value;
-      }else{
-        $this->set_color = $value;
+      switch ($key){
+        case 'id':
+          $this->id = $value;
+          break;
+        case 'color':
+          $this->set_color = $value;
+          break;
+        case 'action':
+          $action = $value;
+          break;
+
       }
     }
 
@@ -40,7 +45,7 @@ class CurlModel {
       $action = 'get';
     }
 
-    if(!isset($this->id)){
+    if(!isset($this->id)  || $this->id === ''){
       $this->id = 2;
     }
 

@@ -21,7 +21,7 @@ if($end < 1){
              $song['@attributes']['album'].$this->color->colorize(' By ', $color).
              $song['@attributes']['artist']."\n";
   }
-  $html .= 'Next: https://'.$this->settings['URL'].'/?action=skip&id='.($currentIndex++)."\n";
+  $html .= 'Skip: '.$this->settings['URL'].'/?action=skip&id='.($currentIndex+1)."\n";
 }else{
   $row = $end;
   foreach($song_list as $key => $song){
@@ -45,5 +45,5 @@ if($end < 1){
       $html .= '';
     }
   }
-  $html .= 'Next: https://'.$this->settings['URL'].'/?action=skip&id='.($currentIndex++)."\n";
+  $html .= 'Skip: '.$this->settings['URL'].'/?action=skip&id='.($currentIndex+1)."\n";
 }

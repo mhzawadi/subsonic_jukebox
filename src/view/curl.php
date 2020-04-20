@@ -45,5 +45,5 @@ if($end < 1){
       $html .= '';
     }
   }
-
+  $html .= 'Next: https://'.$settings['URL'].'/?action=skip&id='.$key."\n";
 }

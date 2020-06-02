@@ -2,3 +2,4 @@
 vendor
 src/config/config.php
 .env
+buildx.sh

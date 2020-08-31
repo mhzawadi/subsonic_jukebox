@@ -2,13 +2,12 @@ span, a {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
-  padding: 16px 16px;
+  padding: 6px 6px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
-  white-space: nowrap;
 }
 div{
   background-color: white; /* Green */
@@ -18,7 +17,6 @@ div{
   text-decoration: none;
   font-size: 16px;
   margin: 4px 2px;
-  white-space: nowrap;
 }
 
 a.jump {
@@ -31,7 +29,7 @@ a.jump {
     background-color: #4CAF50; /* Green */
     border: none;
     color: white;
-    padding: 16px 16px;
+    padding: 6px 6px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -136,4 +134,10 @@ a.button_50 {
 
 #myBtn:hover {
   background-color: #555;
+}
+
+div.list {
+  height: 70%;
+  overflow-y: scroll;
+
 }

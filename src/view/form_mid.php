@@ -32,4 +32,4 @@ foreach($song_list as $key => $song){
   '</div>'."\n"."\n";
   $html_list .= '</form>'."\n";
 }
-$html .= $playing_track.'<div class="list" id="tracks">'.$html_list.'</div>';
+$html .= $playing_track.$html_list;

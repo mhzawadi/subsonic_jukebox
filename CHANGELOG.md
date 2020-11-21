@@ -1,42 +1,92 @@
-#  (2020-02-27)
+## v0.0.15 (2020-09-02)
+
+### Fix
+
+* Revert scrolling div, not mobile friendly. [Matthew Horwood]
 
 
+## v0.0.14 (2020-08-31)
 
-## [0.0.7](https://git.horwood.biz/matt/subsonic_jukebox/compare/0.0.5...0.0.7) (2020-02-27)
+### New
 
-feat: show the current track at the top of the page
-feat: javascript to play/pause and skip tracks from the keyboard
-feat: start of making a docker image
-feat: add drone config to build image
-fix: all the issius from docker image making
+* Tidy playlist chor: build multi-arch latest image. [Matthew Horwood]
 
-## [0.0.5](https://git.horwood.biz/matt/subsonic_jukebox/compare/0.0.4...0.0.5) (2019-08-11)
 
-fix: curl loop
-fix: track count
-fix: track data
+## v0.0.13 (2020-06-21)
 
-## [0.0.4](https://git.horwood.biz/matt/subsonic_jukebox/compare/0.0.3...0.0.4) (2019-08-07)
+### New
 
-feat: show the playlist if it has tracks
-feat: curl API for console access
-feat: make it work with PHP 7.0
-fix: curl API issues
-fix: playback checking
-fix: fix issues moving to PHP7.0
+* Github build test. [Matthew Horwood]
 
-## [0.0.3](https://git.horwood.biz/matt/subsonic_jukebox/compare/0.0.2...0.0.3) (2019-07-30)
+### Fix
 
-feat: added code to get next track
-feat: added previuse and next buttons
-feat: added URL to make form action works
-fix: bottons and playlist labels
-fix: post data
+* Get git tag and set version chor: stop latest build. [Matthew Horwood]
 
-## [0.0.2](https://git.horwood.biz/matt/subsonic_jukebox/compare/0.0.1...0.0.2) (2019-07-22)
+### Changes
 
-fix: fix skip track
+* Rename builder feat: action for tags. [Matthew Horwood]
 
-## 0.0.1 (2019-07-22)
+* Move GH action to the directory. [Matthew Horwood]
 
-First write of code
+* Add docker ignore. [Matthew Horwood]
+
+
+## v0.0.12 (2020-04-20)
+
+### Fix
+
+* Fix curl commands bug; fix curl skip link. [Matthew Horwood]
+
+
+## v0.0.11 (2020-04-20)
+
+### Fix
+
+* Fix settings bug: fix skip link. [Matthew Horwood]
+
+
+## v0.0.10 (2020-04-20)
+
+### Fix
+
+* Add skip link to all playlists. [Matthew Horwood]
+
+### Changes
+
+* Add latest image. [Matthew Horwood]
+
+
+## v0.0.9 (2020-04-17)
+
+### Fix
+
+* Less then, fool. [Matthew Horwood]
+
+* Need to checkout master before pull. [Matthew Horwood]
+
+
+## v0.0.8 (2020-04-17)
+
+### New
+
+* Buildx tooling. [Matthew Horwood]
+
+* Update for building on amd64. [Matthew Horwood]
+
+### Fix
+
+* Buildx didnt run. [Matthew Horwood]
+
+### Documentation
+
+* Move tings about
+* bug: fix curl skip
+* feat: add next link to curl. [Matthew Horwood]
+
+* Add changelog. [Matthew Horwood]
+
+### Changes
+
+* Conventional-commit tooling. [Matthew Horwood]
+
+  Add python tools to make use of conventional-commit

@@ -83,16 +83,16 @@ ignore_regexps = [
 ##
 section_regexps = [
     ('New', [
-        r'^\s*[fF]eat:\s*?([^\n]*)$',
+        r'^feat:\s*?([^\n]*)$',
      ]),
     ('Fix', [
-        r'^\s*[bB]ug:\s*?([^\n]*)$',
+        r'^bug:\s*?([^\n]*)$',
      ]),
     ('Documentation', [
-        r'^\s*[dD]oc:\s*?([^\n]*)$',
+        r'^doc:\s*?([^\n]*)$',
      ]),
     ('Changes', [
-        r'^\s*([cC]hor|[Cc]hore):\s*?([^\n]*)$',
+        r'^(chor|chore):\s*?([^\n]*)$',
      ]),
 
     ('Other', None ## Match all lines
@@ -145,7 +145,7 @@ body_process = ReSub(r'((^|\n)[A-Z]\w+(-\w+)*: .*(\n\s+.*)*)+$', r'') | strip
 ##
 ## Available constructs are those listed in ``body_process`` doc.
 subject_process = (strip |
-    ReSub(r'^([fF]eat|[bB]ug|[dD]oc|[cC]hor|[cC]hore):\s*((dev|use?r|pkg|test|doc)\s*:\s*)?([^\n@]*)(@[a-z]+\s+)*$', r'\4') |
+    ReSub(r'^([fF]eat|[bB]ug|[dD]oc|[cC]hor|[cC]hore):\s*?([^\n@]*)$', r'\2') |
     SetIfEmpty("No commit message.") | ucfirst | final_dot)
 
 
@@ -191,9 +191,9 @@ unreleased_version_label = "(unreleased)"
 ##        Examples:
 ##           - makotemplate("restructuredtext")
 ##
-#output_engine = rest_py
+output_engine = rest_py
 #output_engine = mustache("restructuredtext")
-output_engine = mustache("markdown")
+#output_engine = mustache("markdown")
 #output_engine = makotemplate("restructuredtext")
 
 

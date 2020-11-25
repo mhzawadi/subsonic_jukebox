@@ -6,7 +6,6 @@ if($playing === 'true'){
 }
 $footer = '<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </body>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script>
 // When the user scrolls down 5px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};

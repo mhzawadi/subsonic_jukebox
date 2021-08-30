@@ -1,4 +1,4 @@
-FROM alpine:3.9.4
+FROM alpine:3.14
 MAINTAINER Matthew Horwood <matt@horwood.biz>
 
 COPY . /jukebox/

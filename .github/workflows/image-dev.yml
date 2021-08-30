@@ -1,8 +1,8 @@
-name: build our image for latest
+name: build our image for dev
 
 on:
   push:
-    branches: master
+    branches: dev
 
 jobs:
   build:
@@ -15,10 +15,12 @@ jobs:
       - name: install buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
+      - name: Available platforms
+        run: echo ${{ steps.buildx.outputs.platforms }}
       - name: login to docker hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
       - name: build the image
         run: |
           docker buildx build --push \
-            --tag mhzawadi/subsonic_jukebox:latest \
-            --platform linux/amd64,linux/arm/v7,linux/arm64 .
+            --tag mhzawadi/subsonic_jukebox:dev \
+            --platform linux/amd64,linux/arm64,linux/arm/v7 .

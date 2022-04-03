@@ -1,3 +1,10 @@
+matt@Matthews-MacBook-Pro:~/git/docker-invoiceplane $ cd ..
+# Abandoned!!!!
+
+This repo is now Abandoned in favor of using nextcloud deck, please fork and fix any issues you have.
+
+----
+
 # Subsonic Jukebox
 
 A Subsonic Jukebox manager, it has base functions to add tracks and start or stop. I plan to build out the other functions as I find time, or I get PRs.

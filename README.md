@@ -1,4 +1,3 @@
-matt@Matthews-MacBook-Pro:~/git/docker-invoiceplane $ cd ..
 # Abandoned!!!!
 
 This repo is now Abandoned in favor of using nextcloud deck, please fork and fix any issues you have.
